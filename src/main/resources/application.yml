@@ -1,0 +1,30 @@
+server:
+  port: 8091
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/hr
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 50
+      minimum-idle: 20
+      idle-timeout: 10000
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect # MYsqlDialect Setting
+    hibernate:
+      ddl-auto: none #hibernate ddl setting
+    show-sql: true #For check queries
