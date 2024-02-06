@@ -1,7 +1,8 @@
-package com.example.ecoandrich_test.employee.controller;
+package com.example.ecoandrichtest.employee.controller;
 
-import com.example.ecoandrich_test.employee.service.EmpService;
-import com.example.ecoandrich_test.entity.Employees;
+import com.example.ecoandrichtest.employee.service.EmpService;
+import com.example.ecoandrichtest.employee.vo.EmployeesQueryVO;
+import com.example.ecoandrichtest.entity.Employees;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,9 +46,14 @@ public class EmpRestController {
         obj.put("job_id", employees.getJobId().getJobId());
         obj.put("salary", employees.getSalary());
         obj.put("commission_pct", employees.getCommissionPct());
-        obj.put("manager_id", employees.getManagerId().getEmployeeId());
+        obj.put("manager_id", employees.getManagerId() == null ? null:employees.getManagerId().getEmployeeId());
         obj.put("department_id", employees.getDepartmentId().getId());
         return new ResponseEntity<>(obj, HttpStatus.OK);
+    }
+
+    @GetMapping("/searchByIdmyba")
+    public ResponseEntity<EmployeesQueryVO> searchByIdmyba(@RequestParam("id") String id) {
+        return new ResponseEntity<>(empService.findBtIdmyba(id) , HttpStatus.OK);
     }
 
 }

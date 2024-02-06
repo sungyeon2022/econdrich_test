@@ -28,3 +28,6 @@ spring:
     hibernate:
       ddl-auto: none #hibernate ddl setting
     show-sql: true #For check queries
+mybatis:
+   config-location: classpath:config/mybatis-config.xml
+   mapper-locations: classpath:mapper/**/*.xml

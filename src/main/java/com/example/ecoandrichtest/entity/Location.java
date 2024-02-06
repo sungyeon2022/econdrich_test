@@ -1,4 +1,4 @@
-package com.example.ecoandrich_test.entity;
+package com.example.ecoandrichtest.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.example.ecoandrich_test.entity;
+package com.example.ecoandrichtest.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -41,7 +41,6 @@ public class Employees implements Serializable {
     @Column(name = "hire_date", nullable = false)
     private Date hireDate;
 
-    @Column(name = "job_id", nullable = false)
     @JoinColumn(name = "job_id", nullable = false)
     @ManyToOne
     @JsonBackReference
@@ -53,7 +52,6 @@ public class Employees implements Serializable {
     @Column(name = "commission_pct")
     private BigDecimal commissionPct;
 
-    @Column(name = "manager_id")
     @JoinColumn(name = "manager_id")
     @ManyToOne
     /*
@@ -65,7 +63,6 @@ public class Employees implements Serializable {
     @JsonBackReference
     private Employees managerId;
 
-    @Column(name = "department_id")
     @JoinColumn(name = "department_id")
     @ManyToOne
     @JsonBackReference

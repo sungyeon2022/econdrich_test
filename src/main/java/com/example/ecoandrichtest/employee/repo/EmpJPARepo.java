@@ -1,4 +1,4 @@
-package com.example.ecoandrich_test.employee.repo;
+package com.example.ecoandrichtest.employee.repo;
 /*
 * This is a repository interface used for retrieving table data using JPA.
 *
@@ -6,7 +6,7 @@ package com.example.ecoandrich_test.employee.repo;
 * */
 
 
-import com.example.ecoandrich_test.entity.Employees;
+import com.example.ecoandrichtest.entity.Employees;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.example.ecoandrich_test.employee.service;
+package com.example.ecoandrichtest.employee.service;
 
 
 /*
@@ -9,8 +9,10 @@ package com.example.ecoandrich_test.employee.service;
 * 데이터 생성, 조회, 수정, 삭제시 Controller와 Repo 중간에서 데이터를 정리하는 클래스입니다.
 * */
 
-import com.example.ecoandrich_test.employee.repo.EmpJPARepo;
-import com.example.ecoandrich_test.entity.Employees;
+import com.example.ecoandrichtest.employee.repo.EmpJPARepo;
+import com.example.ecoandrichtest.employee.mapper.EmpMybatisMapper;
+import com.example.ecoandrichtest.employee.vo.EmployeesQueryVO;
+import com.example.ecoandrichtest.entity.Employees;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmpService {
     private final EmpJPARepo empJPARepo;
+    private final EmpMybatisMapper empMybatisMapper;
     /*
     * Retrieval data from employees table by key value.
     * @param id Key in employees table
@@ -31,5 +34,9 @@ public class EmpService {
         * .orElse(null)를 사용하였습니다.  (nullexception대비입니다.)
         * */
         return empJPARepo.findById(id).orElse(null);
+    }
+
+    public EmployeesQueryVO findBtIdmyba(String id) {
+        return empMybatisMapper.findEmployeeById(id);
     }
 }
