@@ -5,6 +5,6 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 @Mapper
-public interface EmpMybatisMapper {
+public interface EmployeeMapper {
     EmployeesQueryVO findEmployeeById(@Param("empId") String empId);
 }
